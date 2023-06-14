@@ -9,6 +9,7 @@ public class Marshmallow : MonoBehaviour
     public Gradient gradient;
     [Range(0f, 1f)]
     public float cook;
+    public float cookRate;
 
     public float distFromFlame;
 
@@ -25,10 +26,21 @@ public class Marshmallow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //gradient.Evaluate(cook);
-        rend.material.color = gradient.Evaluate(cook);
-
+       
+        //get distance from flame (as %age)
         distFromFlame = fire.CookStrength(transform.position);
+
+        //if we're in the flame, cook instantly
+        if (distFromFlame >= 1) cook = 1;
+
+        //otherwise, cook at our rate * the proximity to flame
+        if(cook < 1)
+        {
+            cook += cookRate * distFromFlame * Time.deltaTime;
+        }
+
+        //update gradient
+        rend.material.color = gradient.Evaluate(cook);
 
     }
 }

@@ -9,21 +9,16 @@ public class Fire : MonoBehaviour
     [Tooltip("Radius at which mallows instantly ignite/burn.")]
     public float flameRadius;
 
-    VisiblityDetector detector;
-
     // Start is called before the first frame update
     void Start()
     {
-        detector = GetComponent<VisiblityDetector>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(detector.IsVisible())
-        {
-            Debug.Log("sinister floorting roob");
-        }
+        
     }
     /// <summary>
     /// returns 3d point as percent value between or cooking max and min

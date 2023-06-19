@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Marshmallow : MonoBehaviour
 {
@@ -12,9 +13,23 @@ public class Marshmallow : MonoBehaviour
     public float cookRate;
 
     public float distFromFlame;
+    //event to call when the marsh is picked up
+    public Action<Marshmallow> onGrab;
+    public int mallowIndex;
+
+    public bool onStick;
+
+    private Stick currentStick;
+    public void SetStick(Stick s)
+    {
+        currentStick = s;
+    }
+
+    public bool set;
 
     Renderer rend;
     Fire fire;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +37,12 @@ public class Marshmallow : MonoBehaviour
         rend = GetComponent<Renderer>();
         fire = FindObjectOfType<Fire>();
     }
-
-    // Update is called once per frame
     void Update()
     {
+        if(Input.GetMouseButtonDown(0))
+        {
+            onGrab.Invoke(this);
+        }
        
         //get distance from flame (as %age)
         distFromFlame = fire.CookStrength(transform.position);
@@ -41,6 +58,29 @@ public class Marshmallow : MonoBehaviour
 
         //update gradient
         rend.material.color = gradient.Evaluate(cook);
-
     }
+
+
+    public void Grab()
+    {
+        //parent will be unset via the XR Grab Script settings
+
+        if(!onStick)
+        {
+            return;
+        }
+
+        onStick = false;
+
+        Destroy(GetComponent<FixedJoint>());
+
+        currentStick.DetachMallow();
+    }
+
+    public void ActivateOnGrab()
+    {
+        if (onGrab != null)
+            onGrab(this);
+    }
+  
 }

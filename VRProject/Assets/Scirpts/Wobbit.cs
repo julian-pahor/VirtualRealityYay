@@ -32,15 +32,15 @@ public class Wobbit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(heldItem != null)
-        {
-            heldItem.transform.localPosition = new Vector3(0, 0, 0);
-            heldItem.transform.localRotation = Quaternion.LookRotation(rightHand.transform.forward);
-        }
-        if (test.WasReleasedThisFrame())
-        {
-            Debug.Log("Released primary button");
-        }
+        //if(heldItem != null)
+        //{
+        //    heldItem.transform.localPosition = new Vector3(0, 0, 0);
+        //    heldItem.transform.localRotation = Quaternion.LookRotation(rightHand.transform.forward);
+        //}
+        //if (test.WasReleasedThisFrame())
+        //{
+        //    Debug.Log("Released primary button");
+        //}
       
     }
 
@@ -62,4 +62,5 @@ public class Wobbit : MonoBehaviour
         }
 
     }
+
 }

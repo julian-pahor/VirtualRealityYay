@@ -13,14 +13,29 @@ public class Marshmallow : MonoBehaviour
 
     public float distFromFlame;
 
+    public bool onStick;
+
+    private float mass;
+
+
+    private Stick currentStick;
+    public void SetStick(Stick s)
+    {
+        currentStick = s;
+    }
+
     Renderer rend;
     Fire fire;
+    Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         rend = GetComponent<Renderer>();
         fire = FindObjectOfType<Fire>();
+        rb = GetComponent<Rigidbody>();
+
+        mass = rb.mass;
     }
 
     // Update is called once per frame
@@ -41,6 +56,24 @@ public class Marshmallow : MonoBehaviour
 
         //update gradient
         rend.material.color = gradient.Evaluate(cook);
+    }
 
+
+    public void Grab()
+    {
+        //parent will be unset via the XR Grab Script settings
+
+        if(!onStick)
+        {
+            return;
+        }
+
+        onStick = false;
+
+        Destroy(GetComponent<FixedJoint>());
+
+        //GetComponent<FixedJoint>().
+
+        currentStick.DetachMallow();
     }
 }

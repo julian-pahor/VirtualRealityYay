@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.002095164, g: 0.0017100158, b: 0.0012289168, a: 1}
+  m_IndirectSpecularColor: {r: 0.0014212973, g: 0.0011863556, b: 0.0009953934, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2983,7 +2983,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34282
+  m_Name: pb_Mesh65600
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4557,14 +4557,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636210643}
-  m_LocalRotation: {x: 0.0000000037252899, y: -0.82224584, z: 0.11066231, w: 0.5582702}
-  m_LocalPosition: {x: 2.032, y: 0.431, z: 2.848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.321, z: 0.196}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 989475872}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 10.485, y: -110.987, z: 7.219}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &636210647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6423,6 +6423,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 114526032, guid: f0b038078591d7441bbc6586bbc421d2, type: 3}
   m_PrefabInstance: {fileID: 961938560}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &965897637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965897638}
+  m_Layer: 6
+  m_Name: AttachPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &965897638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965897637}
+  m_LocalRotation: {x: -0.5000006, y: -0, z: -0, w: 0.8660251}
+  m_LocalPosition: {x: 0, y: 0.145, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1746681576}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -60, y: 0, z: 0}
 --- !u!1 &989475871
 GameObject:
   m_ObjectHideFlags: 0
@@ -6447,7 +6478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989475871}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.525, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8785,15 +8816,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421942853}
-  m_LocalRotation: {x: -0.016581366, y: 0.96657515, z: -0.06475154, w: -0.24751727}
-  m_LocalPosition: {x: 5.92, y: 0.452, z: 7.28}
+  m_LocalRotation: {x: -0.018424595, y: 0.8405934, z: 0.02864918, w: 0.54059464}
+  m_LocalPosition: {x: 4.384, y: 0.113, z: 6.126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 989475872}
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 7.665, y: 208.727, z: 0}
+  m_LocalEulerAnglesHint: {x: -3.904, y: 114.509, z: 0}
 --- !u!1001 &1494059610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10052,7 +10083,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 965897638}
   m_AttachEaseInTime: 0.15
   m_MovementType: 2
   m_VelocityDamping: 1
@@ -10089,6 +10120,11 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!4 &1746681576 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2194294982474953113, guid: 3cf2eefa2392fac4b90f4338702818a2, type: 3}
+  m_PrefabInstance: {fileID: 1746681568}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1766632841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10299,7 +10335,9 @@ MonoBehaviour:
   cook: 0
   cookRate: 0.1
   distFromFlame: 0
+  mallowIndex: 0
   onStick: 0
+  set: 0
 --- !u!135 &1801983439
 SphereCollider:
   m_ObjectHideFlags: 0

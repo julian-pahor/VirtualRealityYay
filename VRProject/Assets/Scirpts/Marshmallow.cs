@@ -19,8 +19,6 @@ public class Marshmallow : MonoBehaviour
 
     public bool onStick;
 
-
-
     private Stick currentStick;
     public void SetStick(Stick s)
     {
@@ -75,8 +73,6 @@ public class Marshmallow : MonoBehaviour
         onStick = false;
 
         Destroy(GetComponent<FixedJoint>());
-
-        //GetComponent<FixedJoint>().
 
         currentStick.DetachMallow();
     }

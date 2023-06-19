@@ -19,9 +19,6 @@ public class Marshmallow : MonoBehaviour
 
     public bool onStick;
 
-    private float mass;
-
-
     private Stick currentStick;
     public void SetStick(Stick s)
     {
@@ -55,22 +52,22 @@ public class Marshmallow : MonoBehaviour
 
     void Update()
     {
-        if (!set)
-        {
-            lerp += Time.deltaTime;
-            Vector3.Lerp(transform.position,seekLocation,lerp);
-            if (lerp >= 1) set = true;
-        }
+        //if (!set)
+        //{
+        //    lerp += Time.deltaTime;
+        //    Vector3.Lerp(transform.position,seekLocation,lerp);
+        //    if (lerp >= 1) set = true;
+        //}
 
-        if (!active && set)
-        {
-            if(Vector3.Distance(transform.position,manager.transform.position) > 1)
-            {
-                ActivateOnGrab();
-                active = true;
-                rb.isKinematic = false;
-            }
-        }
+        //if (!active && set)
+        //{
+        //    if(Vector3.Distance(transform.position,manager.transform.position) > 1)
+        //    {
+        //        ActivateOnGrab();
+        //        active = true;
+        //        rb.isKinematic = false;
+        //    }
+        //}
        
         //get distance from flame (as %age)
         distFromFlame = fire.CookStrength(transform.position);
@@ -101,8 +98,6 @@ public class Marshmallow : MonoBehaviour
         onStick = false;
 
         Destroy(GetComponent<FixedJoint>());
-
-        //GetComponent<FixedJoint>().
 
         currentStick.DetachMallow();
     }

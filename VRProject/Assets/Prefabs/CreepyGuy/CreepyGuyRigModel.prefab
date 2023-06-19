@@ -2696,7 +2696,7 @@ GameObject:
   - component: {fileID: 4922476536071316222}
   - component: {fileID: 4922476536071316223}
   m_Layer: 0
-  m_Name: Walking(1)
+  m_Name: CreepyGuyRigModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2711,7 +2711,7 @@ Transform:
   m_GameObject: {fileID: 5229048077443442714}
   m_LocalRotation: {x: 0.1306918, y: -0.20401269, z: 0.021640066, w: 0.969964}
   m_LocalPosition: {x: -13.92, y: 0.01, z: 2.12}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7248, y: 1.7248, z: 1.7248}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4569546668314141246}
@@ -2751,7 +2751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c32f512b3432784b8745d144e33968f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypointsParentGO: {fileID: 0}
   waypointGOs:
   - {fileID: 0}
   - {fileID: 0}
@@ -2767,9 +2766,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  numOfWaypoints: 0
-  reachedLastWP: 0
-  reachedCurrentWP: 0
 --- !u!195 &4922476536071316223
 NavMeshAgent:
   m_ObjectHideFlags: 0

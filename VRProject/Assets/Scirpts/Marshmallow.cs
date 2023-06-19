@@ -28,8 +28,6 @@ public class Marshmallow : MonoBehaviour
         currentStick = s;
     }
 
-    Renderer rend;
-    Fire fire;
     float lerp;
     public bool set;
     bool active;

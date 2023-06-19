@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.OpenXR.Input;
 
 public class Wobbit : MonoBehaviour
 {
   
 
     public InputAction test;
+
 
     public Transform rightHand;
 
@@ -32,7 +34,9 @@ public class Wobbit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(heldItem != null)
+       
+
+        if (heldItem != null)
         {
             heldItem.transform.localPosition = new Vector3(0, 0, 0);
             heldItem.transform.localRotation = Quaternion.LookRotation(rightHand.transform.forward);

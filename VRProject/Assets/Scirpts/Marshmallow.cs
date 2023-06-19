@@ -19,7 +19,6 @@ public class Marshmallow : MonoBehaviour
 
     public bool onStick;
 
-    private float mass;
 
 
     private Stick currentStick;
@@ -28,48 +27,23 @@ public class Marshmallow : MonoBehaviour
         currentStick = s;
     }
 
-    float lerp;
     public bool set;
-    bool active;
-    Vector3 seekLocation;
+
     Renderer rend;
     Fire fire;
-    MarshMallowManager manager;
-    Rigidbody rb;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rend = GetComponent<Renderer>();
         fire = FindObjectOfType<Fire>();
-        rb = FindObjectOfType<Rigidbody>();
     }
-
-
-    public void Initialise(Vector3 location, MarshMallowManager mmm)
-    {
-        rb.isKinematic = true;
-        seekLocation = location;
-        manager = mmm;
-    }
-
     void Update()
     {
-        if (!set)
+        if(Input.GetMouseButtonDown(0))
         {
-            lerp += Time.deltaTime;
-            Vector3.Lerp(transform.position,seekLocation,lerp);
-            if (lerp >= 1) set = true;
-        }
-
-        if (!active && set)
-        {
-            if(Vector3.Distance(transform.position,manager.transform.position) > 1)
-            {
-                ActivateOnGrab();
-                active = true;
-                rb.isKinematic = false;
-            }
+            onGrab.Invoke(this);
         }
        
         //get distance from flame (as %age)

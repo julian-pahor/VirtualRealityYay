@@ -7,8 +7,16 @@ using UnityEngine.XR.OpenXR.Input;
 public class Wobbit : MonoBehaviour
 {
   
+    public static Wobbit instance;
 
-    public InputAction test;
+    private void Awake()
+    {
+        instance = this;
+    }
+
+
+    public InputAction trigger1;
+    public InputAction trigger2;
 
 
     public Transform rightHand;
@@ -18,17 +26,17 @@ public class Wobbit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        test.started += Test;   
+        //started += Test;   
     }
 
     private void OnEnable()
     {
-        test.Enable();
+        trigger1.Enable();
     }
 
     private void OnDisable()
     {
-        test.Disable();
+        trigger1.Disable();
     }
 
     // Update is called once per frame
@@ -41,7 +49,7 @@ public class Wobbit : MonoBehaviour
             heldItem.transform.localPosition = new Vector3(0, 0, 0);
             heldItem.transform.localRotation = Quaternion.LookRotation(rightHand.transform.forward);
         }
-        if (test.WasReleasedThisFrame())
+        if (trigger1.WasReleasedThisFrame())
         {
             Debug.Log("Released primary button");
         }

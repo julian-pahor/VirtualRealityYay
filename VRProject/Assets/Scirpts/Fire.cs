@@ -6,20 +6,35 @@ public class Fire : MonoBehaviour
 {
     [Tooltip("Radius at which mallows begin to cook.")]
     public float cookRadius;
+    float currentCookRadius;
     [Tooltip("Radius at which mallows instantly ignite/burn.")]
     public float flameRadius;
 
-    // Start is called before the first frame update
-    void Start()
+    [Range(0f, 1f)]
+    public float fireHealth;
+    public float healthReturn;
+    public float decayRate;
+
+    public Transform flameObject;
+    public ParticleSystem stokeBurst;
+
+    Vector3 startPos;
+    Vector3 endPos;
+
+    private void Start()
     {
-        
+        startPos = flameObject.transform.position;
+        endPos = startPos - new Vector3(0, 2, 0);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        fireHealth -= Time.deltaTime * decayRate;
+        flameObject.transform.position = Vector3.Lerp(endPos,startPos, fireHealth);
+        currentCookRadius = Mathf.Lerp(flameRadius,cookRadius,fireHealth); 
+        fireHealth = Mathf.Clamp(fireHealth, 0, 1);
     }
+
     /// <summary>
     /// returns 3d point as percent value between or cooking max and min
     /// </summary>
@@ -41,8 +56,20 @@ public class Fire : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, cookRadius);
+        Gizmos.DrawWireSphere(transform.position, currentCookRadius);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, flameRadius);
+    }
+   
+    private void OnTriggerEnter(Collider other)
+    {
+        Stick collidingStick = other.GetComponent<Stick>();
+        if (collidingStick == null) return;
+
+        fireHealth += healthReturn;
+        if (stokeBurst != null)
+            stokeBurst.Play();
+
+        
     }
 }

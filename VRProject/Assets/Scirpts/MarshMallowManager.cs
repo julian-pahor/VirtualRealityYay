@@ -17,7 +17,7 @@ public class MarshMallowManager : MonoBehaviour
     public List<GameObject> dummyMarsh;
 
     public float spawnSpeed;
-
+    public float radius;
 
     private void Start()
     {
@@ -28,6 +28,18 @@ public class MarshMallowManager : MonoBehaviour
             dummyMarsh.Add(dum);
             DummyMarsh(i);
             ++i;
+        }
+    }
+
+    private void Update()
+    {
+        foreach(Marshmallow marsh in boxMallows)
+        {
+            if(Vector3.Distance(marsh.transform.position,transform.position) > radius)
+            {
+                marsh.ActivateOnGrab();
+                return;
+            }
         }
     }
 
@@ -70,9 +82,14 @@ public class MarshMallowManager : MonoBehaviour
             yield return null;
         }
         NewMarsh(index);
+       
         dummyMarsh[index].gameObject.SetActive(false);
         
+    }
 
-     
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }

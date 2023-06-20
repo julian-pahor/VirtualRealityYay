@@ -434,6 +434,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 497570, guid: 99a48108c5a1932488c06e519f6097f4, type: 3}
   m_PrefabInstance: {fileID: 63804936}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &83545936 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5366271758512731985, guid: b46cb4402bf10164fa134e16a26fb167, type: 3}
+  m_PrefabInstance: {fileID: 2114523304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &91271761
 GameObject:
   m_ObjectHideFlags: 0
@@ -10392,6 +10397,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cookRadius: 1.1
   flameRadius: 0.6
+  fireHealth: 1
+  healthReturn: 0.25
+  decayRate: 0.01
+  flameObject: {fileID: 83545936}
 --- !u!135 &1836780357
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10400,7 +10409,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836780355}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

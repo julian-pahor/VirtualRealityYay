@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Marshmallow : MonoBehaviour
 {
@@ -38,7 +39,6 @@ public class Marshmallow : MonoBehaviour
     Renderer rend;
     Fire fire;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -71,6 +71,7 @@ public class Marshmallow : MonoBehaviour
 
         //update gradient
         rend.material.color = gradient.Evaluate(cook);
+
     }
 
 

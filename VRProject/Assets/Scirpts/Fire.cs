@@ -16,6 +16,7 @@ public class Fire : MonoBehaviour
     public float decayRate;
 
     public Transform flameObject;
+    public ParticleSystem stokeBurst;
 
     Vector3 startPos;
     Vector3 endPos;
@@ -66,7 +67,9 @@ public class Fire : MonoBehaviour
         if (collidingStick == null) return;
 
         fireHealth += healthReturn;
-        Debug.Log("Stok");
+        if (stokeBurst != null)
+            stokeBurst.Play();
+
         
     }
 }

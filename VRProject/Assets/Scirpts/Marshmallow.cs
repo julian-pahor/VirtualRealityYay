@@ -6,10 +6,14 @@ using System;
 public class Marshmallow : MonoBehaviour
 {
 
-
+    public ParticleSystem burnEffect;
     public Gradient gradient;
+
     [Range(0f, 1f)]
-    public float cook;
+    public float cookThreshold;
+
+    public bool isCooked;
+
     public float cookRate;
 
     public float distFromFlame;
@@ -19,11 +23,15 @@ public class Marshmallow : MonoBehaviour
 
     public bool onStick;
 
+    float cook;
     private Stick currentStick;
+
+    //--------QUARANTINE----------
     public void SetStick(Stick s)
     {
         currentStick = s;
     }
+    //--DANGEROUS LEVELS OF STUPUD--
 
     public bool set;
 
@@ -39,9 +47,14 @@ public class Marshmallow : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+
+        if(!isCooked)
         {
-            onGrab.Invoke(this);
+            if(cook >= cookThreshold)
+            {
+                burnEffect.Play();
+                isCooked = true;
+            }
         }
        
         //get distance from flame (as %age)

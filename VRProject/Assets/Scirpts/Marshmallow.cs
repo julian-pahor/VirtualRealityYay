@@ -98,10 +98,12 @@ public class Marshmallow : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Call any gameplay related feature
-        Grab();
+        if(other.tag == "Player")
+        {
+            //Call any gameplay related feature
+            Grab();
 
-        Destroy(this.gameObject);
+            Destroy(this.gameObject);
+        }
     }
-
 }

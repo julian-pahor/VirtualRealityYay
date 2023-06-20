@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/AlfRoomOfCretivity.unity
     guid: 4dff221a31cb4f749bd9344177fa6045
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/JuliansDrums.unity
     guid: adcbfbc128c99e34dad4e0e64132214e
   m_configObjects:

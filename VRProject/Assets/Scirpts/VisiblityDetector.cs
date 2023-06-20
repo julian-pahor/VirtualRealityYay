@@ -12,6 +12,10 @@ public class VisiblityDetector : MonoBehaviour
         return GetIsVisible(cam, target);
     }
 
+    public Vector3 ViewerPosition()
+    {
+        return cam.transform.position;
+    }
     bool GetIsVisible(Camera c, Collider target)
     {
 

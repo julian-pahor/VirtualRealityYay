@@ -95,5 +95,13 @@ public class Marshmallow : MonoBehaviour
         if (onGrab != null)
             onGrab(this);
     }
-  
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //Call any gameplay related feature
+        Grab();
+
+        Destroy(this.gameObject);
+    }
+
 }

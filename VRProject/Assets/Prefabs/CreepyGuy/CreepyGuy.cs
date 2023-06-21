@@ -16,10 +16,11 @@ public class CreepyGuy : MonoBehaviour
 
     public float speed;
     public float huntTime;
+    public float stalkDistance;
+    public float runSpeed;
 
     float timer;
-
-    enum State { Wander,Seek,Retreat}
+    enum State { Wander,Seek,Retreat, Wait}
     State state;
 
     //public Transform goal;
@@ -48,12 +49,42 @@ public class CreepyGuy : MonoBehaviour
         {
             case State.Seek:
 
-                if(visiblityDetector.IsVisible() || navMeshAgent.remainingDistance < 1)
+                if(visiblityDetector.IsVisible())
                 {
-                    
+                    Debug.Log("Creepy Guy: I'm running away.");
+                  
+                    GetRandomWaypoint();
+                    navMeshAgent.speed = speed * runSpeed;
                     state = State.Retreat;
+                }
+
+                if (player != null)
+                {
+                    float dist = Vector3.Distance(player.transform.position, transform.position);
+                    if (dist < stalkDistance)
+                    { 
+                    Debug.Log("Creepy Guy: I'm waiting to spook you");
+                    navMeshAgent.speed = 0;
+                    state = State.Wait;
+                    }
+
+                }
+
+                //if(navMeshAgent.remainingDistance < stalkDistance)
+                //{
+                //  
+                //}
+
+                break;
+
+            case State.Wait:
+
+                if (visiblityDetector.IsVisible())
+                {
+                    Debug.Log("Creepy Guy: I'm running away.");
                     GetRandomWaypoint();
                     navMeshAgent.speed = speed * 4;
+                    state = State.Retreat;
                 }
 
 
@@ -72,13 +103,21 @@ public class CreepyGuy : MonoBehaviour
                 timer += Time.deltaTime;
                 if(timer > huntTime)
                 {
+                   
                     //don't try this if we have no player
                     if (player == null)
                         return;
 
+                    
                     timer = 0;
-                    state = State.Seek;
-                    navMeshAgent.destination = player.transform.position;
+                    if (!visiblityDetector.IsVisible())
+                    {
+                        Debug.Log("Creepy Guy: I'm coming to eat you.");
+                        navMeshAgent.destination = player.transform.position;
+                        state = State.Seek;
+                    }
+                    else
+                        Debug.Log("Creepy Guy: You can see me, so I'm not going to hunt.");
                 }
 
                 //thank you gamedev dustin

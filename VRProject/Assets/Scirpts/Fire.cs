@@ -17,20 +17,31 @@ public class Fire : MonoBehaviour
 
     public Transform flameObject;
     public ParticleSystem stokeBurst;
+    
+    public Transform glow;
+    Vector3 glowScale;
 
     Vector3 startPos;
     Vector3 endPos;
+
 
     private void Start()
     {
         startPos = flameObject.transform.position;
         endPos = startPos - new Vector3(0, 2, 0);
+
+        glowScale = glow.localScale;
+   
     }
+  
 
     private void Update()
     {
         fireHealth -= Time.deltaTime * decayRate;
         flameObject.transform.position = Vector3.Lerp(endPos,startPos, fireHealth);
+
+        glow.localScale = glowScale * Mathf.Lerp(.01f,1, fireHealth);
+
         currentCookRadius = Mathf.Lerp(flameRadius,cookRadius,fireHealth); 
         fireHealth = Mathf.Clamp(fireHealth, 0, 1);
     }

@@ -8,7 +8,6 @@ public class Marshmallow : MonoBehaviour
 {
 
     public ParticleSystem burnEffect;
-    public Gradient gradient;
 
     [Range(0f, 1f)]
     public float cookThreshold;
@@ -23,7 +22,7 @@ public class Marshmallow : MonoBehaviour
     public int mallowIndex;
 
     public bool onStick;
-
+    [SerializeField]
     float cook;
     private Stick currentStick;
 
@@ -70,7 +69,7 @@ public class Marshmallow : MonoBehaviour
         }
 
         //update gradient
-        rend.material.color = gradient.Evaluate(cook);
+        rend.material.SetFloat("_CookAmount", cook);
 
     }
 

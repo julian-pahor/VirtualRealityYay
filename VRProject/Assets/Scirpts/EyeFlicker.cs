@@ -5,31 +5,43 @@ using UnityEngine;
 
 public class EyeFlicker : MonoBehaviour
 {
-    private Color alpha;
-    private float timeTillNext;
-    private float minTime = 0;
-    private float maxTime = 2;
+    private float hideTime;
+    private float hideMinTime = 6;
+    private float hideMaxTime = 20;
+
+    private float appearTime;
+    private float appearMinTime = 0.5f;
+    private float appearMaxTime = 1;
+
     // Start is called before the first frame update
     void Start()
     {
-        alpha = gameObject.GetComponent<SpriteRenderer>().color;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        StartFlicker();
     }
 
     private void StartFlicker()
     {
-        timeTillNext = Random.Range(minTime, maxTime);
+        //generates the hide and appear times for the eyes
+        hideTime = Random.Range(hideMinTime, hideMaxTime);
+        appearTime = Random.Range(appearMinTime, appearMaxTime);
 
+        StartCoroutine(FlickerTimer());
 
     }
 
-    //IEnumerator FlickerTimer()
-    //{
-    //    WaitForSeconds(timeTillNext);
-    //}
+    IEnumerator FlickerTimer()
+    {
+        //sets transparent
+        gameObject.GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 0);
+        yield return new WaitForSeconds(hideTime);
+
+        //sets visible
+        gameObject.GetComponent<SpriteRenderer>().color = new Vector4(1, 1, 1, 1);
+        yield return new WaitForSeconds(appearTime);
+
+        StartFlicker();
+        
+        StopCoroutine(FlickerTimer());
+       
+    }
 }

@@ -26,14 +26,19 @@ public class Marshmallow : MonoBehaviour
     float cook;
     private Stick currentStick;
 
+    public AudioClip cookingClip;
+    public AudioClip burntClip;
+    public AudioClip impactClip;
+    public AudioClip eatClip;
+
+    private AudioSource source;
+
     //--------QUARANTINE----------
     public void SetStick(Stick s)
     {
         currentStick = s;
     }
     //--DANGEROUS LEVELS OF STUPUD--
-
-    public bool set;
 
     Renderer rend;
     Fire fire;
@@ -43,6 +48,7 @@ public class Marshmallow : MonoBehaviour
     {
         rend = GetComponent<Renderer>();
         fire = FindObjectOfType<Fire>();
+        source = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -52,12 +58,29 @@ public class Marshmallow : MonoBehaviour
             if(cook >= cookThreshold)
             {
                 burnEffect.Play();
+                source.Pause();
+                source.loop = false;
+                source.clip = burntClip;
+                RandomiseAudio();
+                source.Play();
                 isCooked = true;
             }
         }
        
         //get distance from flame (as %age)
         distFromFlame = fire.CookStrength(transform.position);
+
+        if(distFromFlame > 0.2f && !isCooked)
+        {
+            source.clip = cookingClip;
+            source.loop = true;
+            source.volume = Mathf.Clamp(1 * distFromFlame, 0.3f, 0.8f);
+
+            if(!source.isPlaying)
+            {
+                source.Play();
+            }
+        }
 
         //if we're in the flame, cook instantly
         if (distFromFlame >= 1) cook = 1;
@@ -104,9 +127,37 @@ public class Marshmallow : MonoBehaviour
             {
                 //Call any gameplay related feature
                 Grab();
-
+                source.Pause();
+                source.clip = eatClip;
+                RandomiseAudio();
+                source.Play();
                 Destroy(this.gameObject);
             }
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        source.Pause();
+        source.loop = false;
+        source.clip = impactClip;
+        RandomiseAudio();
+        source.Play();
+    }
+
+    private void RandomiseAudio()
+    {
+        source.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
+        source.volume = UnityEngine.Random.Range(0.7f, 0.8f);
+    }
+
+    public void PickUp()
+    {
+        Grab();
+    }
+
+    public void PutDown()
+    {
+        Grab();
     }
 }

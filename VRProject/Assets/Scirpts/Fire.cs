@@ -24,6 +24,8 @@ public class Fire : MonoBehaviour
     Vector3 startPos;
     Vector3 endPos;
 
+    public AudioSource source;
+
 
     private void Start()
     {
@@ -77,10 +79,12 @@ public class Fire : MonoBehaviour
         Stick collidingStick = other.GetComponent<Stick>();
         if (collidingStick == null) return;
 
+        source.pitch = Random.Range(0.9f, 1.1f);
+        source.volume = Random.Range(0.5f, 0.6f);
+        source.Play();
+
         fireHealth += healthReturn;
         if (stokeBurst != null)
             stokeBurst.Play();
-
-        
     }
 }

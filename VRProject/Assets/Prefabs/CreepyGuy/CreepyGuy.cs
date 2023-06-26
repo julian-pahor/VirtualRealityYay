@@ -23,6 +23,10 @@ public class CreepyGuy : MonoBehaviour
     enum State { Wander,Seek,Retreat, Wait}
     State state;
 
+    public List<AudioClip> footsteps = new List<AudioClip>();
+    public AudioSource source;
+    private HorrorStingerAudio horrorAudio;
+
     //public Transform goal;
     // Start is called before the first frame update
     void Start()
@@ -31,6 +35,7 @@ public class CreepyGuy : MonoBehaviour
 
         navMeshAgent = GetComponent<NavMeshAgent>();
         visiblityDetector = GetComponent<VisiblityDetector>();
+        horrorAudio = GetComponent<HorrorStingerAudio>();
         navMeshAgent.speed = speed;
         GetRandomWaypoint();       
     }
@@ -54,6 +59,7 @@ public class CreepyGuy : MonoBehaviour
                     Debug.Log("Creepy Guy: I'm running away.");
                   
                     GetRandomWaypoint();
+                    horrorAudio.active = false;
                     navMeshAgent.speed = speed * runSpeed;
                     state = State.Retreat;
                 }
@@ -114,6 +120,7 @@ public class CreepyGuy : MonoBehaviour
                     {
                         Debug.Log("Creepy Guy: I'm coming to eat you.");
                         navMeshAgent.destination = player.transform.position;
+                        horrorAudio.active = true;
                         state = State.Seek;
                     }
                     else
@@ -133,5 +140,14 @@ public class CreepyGuy : MonoBehaviour
         }
 
       
+    }
+
+    public void FootstepEvent()
+    {
+        source.clip = footsteps[Random.Range(0, footsteps.Count)];
+        source.volume = Random.Range(0.85f, 1.0f);
+        source.pitch = Random.Range(0.9f, 1.1f);
+        source.Play();
+        //Debug.Log("YES HELLO ANIMATION EVENT");
     }
 }

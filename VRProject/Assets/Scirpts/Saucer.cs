@@ -18,10 +18,15 @@ public class Saucer : MonoBehaviour
 
     float timer;
 
+    public AudioClip flyClip;
+    public AudioClip abductClip;
+
+    private AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,6 +37,8 @@ public class Saucer : MonoBehaviour
             timer += Time.deltaTime;
             if(timer > saucerTime)
             {
+                source.clip = flyClip;
+                source.Play();
                 isSaucing = true;
             }
             return;
@@ -43,6 +50,9 @@ public class Saucer : MonoBehaviour
             transform.position += direction * Time.deltaTime * saucerSpeed;
             if (Vector3.Distance(saucerSpot.position, transform.position) < 0.01f)
             {
+                source.Pause();
+                source.clip = abductClip;
+                source.Play();
                 abduct = true;
                 Physics.gravity = Physics.gravity * -abductSpeed;
                 spot.gameObject.SetActive(true);

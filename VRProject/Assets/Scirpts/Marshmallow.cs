@@ -100,10 +100,13 @@ public class Marshmallow : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            //Call any gameplay related feature
-            Grab();
+            if(cook > 0.5f)
+            {
+                //Call any gameplay related feature
+                Grab();
 
-            Destroy(this.gameObject);
+                Destroy(this.gameObject);
+            }
         }
     }
 }

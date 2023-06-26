@@ -14,6 +14,7 @@ public class Saucer : MonoBehaviour
     public Transform player;
 
     public float abductSpeed;
+    public float playerSpeed;
 
     float timer;
 
@@ -50,7 +51,8 @@ public class Saucer : MonoBehaviour
 
         else
         {
-            player.position += (Physics.gravity * abductSpeed)/4;
+            player.position += playerSpeed * Time.deltaTime * Vector3.up;
+            if(player.position.y > transform.position.y) { Application.Quit(); }
         }
 
     }

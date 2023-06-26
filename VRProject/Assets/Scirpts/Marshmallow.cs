@@ -131,7 +131,7 @@ public class Marshmallow : MonoBehaviour
                 source.clip = eatClip;
                 RandomiseAudio();
                 source.Play();
-                Destroy(this.gameObject);
+                StartCoroutine(Eat());
             }
         }
     }
@@ -159,5 +159,11 @@ public class Marshmallow : MonoBehaviour
     public void PutDown()
     {
         Grab();
+    }
+
+    IEnumerator Eat()
+    {
+        yield return new WaitForSeconds(eatClip.length);
+        Destroy(this.gameObject);
     }
 }

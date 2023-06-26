@@ -15,6 +15,8 @@ public class Saucer : MonoBehaviour
     public Light spot;
     public Transform player;
 
+    bool isAbducting;
+
     public float abductSpeed;
     public float playerSpeed;
 
@@ -54,16 +56,14 @@ public class Saucer : MonoBehaviour
             transform.position += direction * Time.deltaTime * saucerSpeed;
             if (Vector3.Distance(saucerSpot.position, transform.position) < 0.01f)
             {
-                source.Pause();
-                source.clip = abductClip;
-                source.Play();
+         
                 abduct = true;
-                Physics.gravity = Physics.gravity * -abductSpeed;
-                spot.gameObject.SetActive(true);
+                StartCoroutine(SillySound());
+           
             }
         }
 
-        else
+        if(isAbducting)
         {
             player.position += playerSpeed * Time.deltaTime * Vector3.up;
             if(player.position.y > transform.position.y) { Application.Quit(); }
@@ -71,6 +71,17 @@ public class Saucer : MonoBehaviour
 
     }
 
+    IEnumerator SillySound()
+    {
+        source.Pause();
+        source.clip = abductClip;
+        source.Play();
+        yield return new WaitForSeconds(1f);
+        Physics.gravity = Physics.gravity * -abductSpeed;
+        spot.gameObject.SetActive(true);
+        isAbducting = true;
+
+    }
 
  
 }

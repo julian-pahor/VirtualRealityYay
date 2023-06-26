@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Events;
+using UnityEngine.InputSystem.XR;
 
 public class FaceIgniter : MonoBehaviour
 {
@@ -14,10 +15,11 @@ public class FaceIgniter : MonoBehaviour
     public float flameTime;
     public float immunityTime;
 
-
+    public ActionBasedController rh;
+    public ActionBasedController lh;
     void Start()
     {
-  
+     
         fire = FindObjectOfType<Fire>();
         faceFire.Stop();
     }
@@ -34,6 +36,8 @@ public class FaceIgniter : MonoBehaviour
             onfire = true;
             timer = 0;
             faceFire.Play();
+            lh.SendHapticImpulse(1, flameTime);
+            rh.SendHapticImpulse(1, flameTime);
         }
 
         if(onfire)

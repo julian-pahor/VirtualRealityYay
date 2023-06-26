@@ -14,6 +14,7 @@ public class SinisterFloatingOrb : MonoBehaviour
     XRGrabInteractable interactable;
     Marshmallow mallow;
 
+    bool sinister;
     bool mellow;
     
     void Start()
@@ -42,7 +43,9 @@ public class SinisterFloatingOrb : MonoBehaviour
                 mallow.enabled = true;
             }
 
-            if (detector.IsVisible())
+            if (!sinister && detector.IsVisible()) sinister = true;
+
+            if (sinister)
             {
                 Vector3 direction = (detector.ViewerPosition() - transform.position).normalized;
                 transform.position += direction * speed * Time.deltaTime;

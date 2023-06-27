@@ -2684,6 +2684,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 417421674161879661, guid: e27ec21566431c64d9a30a71434333a6, type: 3}
+      propertyPath: standard
+      value: 
+      objectReference: {fileID: 8300000, guid: 127552daeb153e147915795c2d7c9c6c, type: 3}
+    - target: {fileID: 417421674161879661, guid: e27ec21566431c64d9a30a71434333a6, type: 3}
+      propertyPath: tidyClip
+      value: 
+      objectReference: {fileID: 8300000, guid: aba20e5924d007d44a838b3725683609, type: 3}
+    - target: {fileID: 417421674161879661, guid: e27ec21566431c64d9a30a71434333a6, type: 3}
+      propertyPath: tidyClip2
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ce8ccbac47758a4e8902e3585008bc9, type: 3}
     - target: {fileID: 4988509793858211885, guid: e27ec21566431c64d9a30a71434333a6, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -13303,7 +13315,7 @@ Transform:
   - {fileID: 1750431837}
   - {fileID: 1669001757}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &882457288
 MonoBehaviour:
@@ -13317,7 +13329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29bc9178ae968b43a984af428e001e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saucerTime: 120
+  saucerTime: 160
   saucerSpeed: 1
   saucerSpot: {fileID: 1695451923}
   isSaucing: 0

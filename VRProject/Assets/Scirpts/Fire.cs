@@ -80,7 +80,7 @@ public class Fire : MonoBehaviour
         if (collidingStick == null) return;
 
         source.pitch = Random.Range(0.9f, 1.1f);
-        source.volume = Random.Range(0.5f, 0.6f);
+        source.volume = Random.Range(0.35f, 0.45f);
         source.Play();
 
         fireHealth += healthReturn;

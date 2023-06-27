@@ -145,7 +145,7 @@ public class CreepyGuy : MonoBehaviour
     public void FootstepEvent()
     {
         source.clip = footsteps[Random.Range(0, footsteps.Count)];
-        source.volume = Random.Range(0.85f, 1.0f);
+        source.volume = Random.Range(0.9f, 1.0f);
         source.pitch = Random.Range(0.9f, 1.1f);
         source.Play();
         //Debug.Log("YES HELLO ANIMATION EVENT");

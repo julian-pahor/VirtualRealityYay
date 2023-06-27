@@ -148,7 +148,7 @@ public class Marshmallow : MonoBehaviour
     private void RandomiseAudio()
     {
         source.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
-        source.volume = UnityEngine.Random.Range(0.7f, 0.8f);
+        source.volume = UnityEngine.Random.Range(0.5f, 0.6f);
     }
 
     public void PickUp()

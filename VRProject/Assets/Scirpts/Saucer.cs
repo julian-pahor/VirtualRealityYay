@@ -44,6 +44,7 @@ public class Saucer : MonoBehaviour
             if(timer > saucerTime)
             {
                 source.clip = flyClip;
+                source.loop = true;
                 source.Play();
                 isSaucing = true;
             }
@@ -74,6 +75,7 @@ public class Saucer : MonoBehaviour
     IEnumerator SillySound()
     {
         source.Pause();
+        source.loop = false;
         source.clip = abductClip;
         source.Play();
         yield return new WaitForSeconds(1f);

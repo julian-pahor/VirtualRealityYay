@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 147662695544372967}
   - component: {fileID: 2907468247739483020}
   - component: {fileID: 4023544912221738432}
-  - component: {fileID: 8939247589172572469}
+  - component: {fileID: 1925877749}
   m_Layer: 0
   m_Name: LaptopMenu
   m_TagString: Untagged
@@ -542,7 +542,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8060690238935902680}
-  - {fileID: 1505077560}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -73.25, z: 0}
@@ -695,7 +694,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 1505077560}
+  m_AttachTransform: {fileID: 0}
   m_AttachEaseInTime: 0.15
   m_MovementType: 2
   m_VelocityDamping: 1
@@ -742,10 +741,105 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4411162, y: 0.3666858, z: 0.51773477}
+  m_Center: {x: 0.06996468, y: 0.17213327, z: 0.021140607}
+--- !u!82 &1925877749
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5051167853630710344}
+  m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: f2678f35f5f886a4bb86ab5152116294, type: 3}
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6505017408475769785
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,7 +906,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: af146ed9a9ceec344b362f14f17589e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c7cfafa7adb9b304f8e3358ab0471154, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1017,16 +1111,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e557086099994e64f83ac0d469f89572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  evilBalth: {fileID: 21300000, guid: bd5599f9bcc51a44ca6047c17d4c4782, type: 3}
+  balthEvilName: "B\u0337\u0301\u0344\u035D\u0328\u0339a\u0334\u0352\u0307\u0349l\u0338\u031A\u030E\u0329\u0320t\u0337\u0341\u030C\u0326\u0345\u0359h\u0338\u0352\u0357\u0345\u033B\u032Da\u0335\u0360\u033E\u0345z\u0336\u033F\u034B\u032E\u0327a\u0334\u034A\u0301\u0348\u0319\u0353r\u0336\u035D\u0341\u0304\u0329\u032B"
   goblinHP: 0
   goblinHPMax: 10
   balthazars:
-  - {fileID: 21300000, guid: af146ed9a9ceec344b362f14f17589e6, type: 3}
-  - {fileID: 21300000, guid: 6464e0f90381ddb4683db898a59bfad8, type: 3}
-  - {fileID: 21300000, guid: a876f46880a9784468134b3ccba85650, type: 3}
-  - {fileID: 21300000, guid: 980760faedaf19548a076216e395facc, type: 3}
-  - {fileID: 21300000, guid: de579e9a3ad3ee74bbce34a5f5429e0d, type: 3}
+  - {fileID: 21300000, guid: c7cfafa7adb9b304f8e3358ab0471154, type: 3}
+  - {fileID: 21300000, guid: 380b662417f360a46b4fcacdbd2d26cc, type: 3}
+  - {fileID: 21300000, guid: b55a95cd964ec634e83a15d99ed784a8, type: 3}
+  - {fileID: 21300000, guid: 6c77f7a18b15a314bac777967cdf4422, type: 3}
+  - {fileID: 21300000, guid: d3ab8d0d60f46254289ce39d48d0b0e2, type: 3}
   loots:
-  - {fileID: 21300000, guid: 65f0e363b74cf5845ab8c3fbc14f39ac, type: 3}
+  - {fileID: 21300000, guid: 79887674751b0f8409839f1b8786a295, type: 3}
+  - {fileID: 21300000, guid: c7d0b432b4d3cd54fb8350debd3b7c44, type: 3}
+  - {fileID: 21300000, guid: 77a87ab313d6db24caced356a74fe051, type: 3}
+  - {fileID: 21300000, guid: c4b6613d73998af45afdd892bc57bff6, type: 3}
   balthazarNames:
   - Balthazar's Brother
   - Balthazar's Other Cousin
@@ -1061,6 +1160,8 @@ MonoBehaviour:
   currentEnemyImage: {fileID: 3316704523973854744}
   displayText: {fileID: 8060690239404751773}
   claimLoot: {fileID: 5532279058437326658}
+  evilClip: {fileID: 8300000, guid: 851ef1062114dcf4191e2be56a30ca82, type: 3}
+  source: {fileID: 1925877749}
 --- !u!114 &663467211
 MonoBehaviour:
   m_ObjectHideFlags: 0

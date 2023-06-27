@@ -8,6 +8,9 @@ public class Woadcraft : MonoBehaviour
 {
 
 
+    public Sprite evilBalth;
+    public string balthEvilName;
+
     public float goblinHP;
     public float goblinHPMax;
 
@@ -26,12 +29,19 @@ public class Woadcraft : MonoBehaviour
 
 
     int combo;
-    public List<int> previous = new List<int>();
+    List<int> previous = new List<int>();
 
+    public AudioClip evilClip;
+    public AudioSource source;
     AbilityButton randButton;
+    Fire fire;
+    bool evil;
 
     void Start()
     {
+        fire = FindObjectOfType<Fire>();
+        
+
         goblinHP = goblinHPMax;
         hpBar.value = goblinHP / goblinHPMax;
         claimLoot.gameObject.SetActive(false);
@@ -49,10 +59,33 @@ public class Woadcraft : MonoBehaviour
         NewRound();
     }
 
-    
+
     void Update()
     {
+        if (evil)
+            return;
+
+        if (Vector3.Distance(transform.position, fire.transform.position) < fire.flameRadius)
+        {
+            TurnEvil();
+        }
+
+    }
+
+    void TurnEvil()
+    {
+        source.clip = evilClip;
+        source.loop = true;
+     
+        source.Play();
         
+        evil = true;
+        claimLoot.gameObject.SetActive(false);
+        actionBar.gameObject.SetActive(false);
+        hpBar.gameObject.SetActive(false);
+        currentEnemyImage.sprite = evilBalth;
+        displayText.text = balthEvilName;
+       
     }
 
     public void DamageGoblin(int index)

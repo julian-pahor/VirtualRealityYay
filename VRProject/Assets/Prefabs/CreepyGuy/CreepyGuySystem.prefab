@@ -42,7 +42,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1414374364222529456, guid: fa9cad867b9acf34683c063d7f6c9cad, type: 3}
       propertyPath: clips.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -1133543480443556449, guid: fa9cad867b9acf34683c063d7f6c9cad, type: 3}
       propertyPath: rolloffMode

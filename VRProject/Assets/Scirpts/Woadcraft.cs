@@ -20,6 +20,8 @@ public class Woadcraft : MonoBehaviour
     public List<string> balthazarNames = new List<string>();
     public List<AbilityButton> abilityButtons = new List<AbilityButton>();
 
+    public List<AudioClip> damageClips = new List<AudioClip>();
+
 
     public Slider hpBar;
     public Image actionBar;
@@ -30,6 +32,10 @@ public class Woadcraft : MonoBehaviour
 
     int combo;
     List<int> previous = new List<int>();
+
+    public AudioClip buttonClick;
+    public AudioClip balthazarDie;
+    public AudioClip loot;
 
     public AudioClip evilClip;
     public AudioSource source;
@@ -102,6 +108,7 @@ public class Woadcraft : MonoBehaviour
             goblinHP -= 1;
         }
 
+        source.PlayOneShot(damageClips[Random.Range(0,damageClips.Count)]);
         hpBar.value = goblinHP / goblinHPMax;
 
         NewRound();
@@ -129,6 +136,8 @@ public class Woadcraft : MonoBehaviour
     void DoLootScreen()
     {
         //LOOT HERE
+        source.PlayOneShot(loot);
+        source.PlayOneShot(balthazarDie);
         actionBar.gameObject.SetActive(false);
         hpBar.gameObject.SetActive(false);
         displayText.text = "LOOT!";
@@ -140,7 +149,7 @@ public class Woadcraft : MonoBehaviour
 
     public void NewEnemy()
     {
-
+        source.PlayOneShot(buttonClick);
         previous.Clear();
         combo = 0;
 

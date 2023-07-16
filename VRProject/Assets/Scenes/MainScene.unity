@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 0fa4d2e1043d38c4d93da80b56add746, type: 2}
 --- !u!1 &37491798
 GameObject:
   m_ObjectHideFlags: 0
@@ -9961,7 +9961,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-18918
+  m_Name: pb_Mesh52128
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

@@ -53700,10 +53700,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stephoscope
       objectReference: {fileID: 0}
-    - target: {fileID: 6560826157878241804, guid: ab60379693b2ce54c8a2373d3b5143ca, type: 3}
-      propertyPath: field of view
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab60379693b2ce54c8a2373d3b5143ca, type: 3}
 --- !u!20 &1414461392 stripped
@@ -54072,18 +54068,6 @@ PrefabInstance:
     - target: {fileID: 3058598970885105337, guid: e2a43e5fc99a8ff40b6157c174ae77a6, type: 3}
       propertyPath: m_Name
       value: MallowBox
-      objectReference: {fileID: 0}
-    - target: {fileID: 8314139328119679176, guid: e2a43e5fc99a8ff40b6157c174ae77a6, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8314139328930693548, guid: e2a43e5fc99a8ff40b6157c174ae77a6, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8314139329244303585, guid: e2a43e5fc99a8ff40b6157c174ae77a6, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2a43e5fc99a8ff40b6157c174ae77a6, type: 3}

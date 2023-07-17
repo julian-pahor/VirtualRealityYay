@@ -33,7 +33,6 @@ public class Fire : MonoBehaviour
         endPos = startPos - new Vector3(0, 2, 0);
 
         glowScale = glow.localScale;
-   
     }
   
 

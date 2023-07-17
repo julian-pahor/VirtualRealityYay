@@ -34,6 +34,10 @@ public class Stick : MonoBehaviour
 
         if (other.gameObject.TryGetComponent<Marshmallow>(out m))
         {
+            if(m.onStick)
+            {
+                return;
+            }
             m.gameObject.transform.position = stickPoint.position;
             m.AddComponent<FixedJoint>().connectedBody = rb;
             m.onStick = true;

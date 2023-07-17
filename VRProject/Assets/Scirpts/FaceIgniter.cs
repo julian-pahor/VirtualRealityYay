@@ -31,7 +31,9 @@ public class FaceIgniter : MonoBehaviour
         if(Time.time < immunityTime)
             return;
 
-        if(!onfire && Vector3.Distance(transform.position,fire.transform.position) < fire.flameRadius+.65f)
+        Vector3 length = transform.position - fire.transform.position;
+
+        if(!onfire && Vector3.SqrMagnitude(length) < Mathf.Pow(fire.flameRadius+.65f,2))
         {
             onfire = true;
             timer = 0;

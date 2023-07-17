@@ -55,8 +55,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlendColorWidth: 0.05
-    - _CookAmount: 0
+    - _BlendColorWidth: 0.03
+    - _CookAmount: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:

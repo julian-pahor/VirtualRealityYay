@@ -37,6 +37,7 @@ public class Drum : MonoBehaviour
         {
             source.clip = standard;
         }
+
         source.Play();
     }
 }

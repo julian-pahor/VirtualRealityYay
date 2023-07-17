@@ -3,7 +3,12 @@ guid: b0846c3fdca93f441810d66a61c1c659
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stick2
+    second: {fileID: 2100000, guid: 6452546e35eb76d4f8e9bdd87dd3cc0e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

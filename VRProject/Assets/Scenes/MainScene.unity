@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.272424, g: 0.20803666, b: 0.5188679, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.1
@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 0fa4d2e1043d38c4d93da80b56add746, type: 2}
+--- !u!4 &21695788 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9067847568975540953, guid: f9f429989a61331418dde3bd3742b411, type: 3}
+  m_PrefabInstance: {fileID: 676596467}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &37491798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,9 +1197,9 @@ MonoBehaviour:
   fireHealth: 1
   healthReturn: 0.25
   decayRate: 0.01
-  flameObject: {fileID: 0}
-  stokeBurst: {fileID: 0}
-  glow: {fileID: 0}
+  flameObject: {fileID: 21695788}
+  stokeBurst: {fileID: 676596468}
+  glow: {fileID: 450451925}
   source: {fileID: 360678999}
 --- !u!135 &360679001
 SphereCollider:
@@ -1335,6 +1340,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f5a24a380916d14db9775daab4fe333, type: 3}
+--- !u!4 &450451925 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7742519549365497384, guid: f9f429989a61331418dde3bd3742b411, type: 3}
+  m_PrefabInstance: {fileID: 676596467}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &536604310
 GameObject:
   m_ObjectHideFlags: 0
@@ -7404,12 +7414,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4980678194904365515, guid: f9f429989a61331418dde3bd3742b411, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9f429989a61331418dde3bd3742b411, type: 3}
+--- !u!198 &676596468 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8594232897706614447, guid: f9f429989a61331418dde3bd3742b411, type: 3}
+  m_PrefabInstance: {fileID: 676596467}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &721608934
 PrefabInstance:
   m_ObjectHideFlags: 0

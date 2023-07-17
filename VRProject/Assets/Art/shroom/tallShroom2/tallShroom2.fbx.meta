@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 3511fa228968b584c8db6ccf399778f7
+guid: e1b4b2de4203f414ba3eb43eeaf9115b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shroom3_lambert
+    second: {fileID: 2100000, guid: 79abe3b3d18e62d4a82466527322be3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shroomSTEM2_Lambert
+    second: {fileID: 2100000, guid: 7d3711f331218aa49a5472c1cf4d759e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

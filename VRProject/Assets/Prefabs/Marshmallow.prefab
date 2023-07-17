@@ -104,6 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b4f6cedf1b738439fc7df21ad3e8c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rawTexture1: {fileID: 2800000, guid: 73eda76b8278eaa47994319f0d10744e, type: 3}
+  rawTexture2: {fileID: 2800000, guid: 8adb1f707e122104a9f6a27db254ff75, type: 3}
   burnEffect: {fileID: 4849891017806065633}
   cookThreshold: 0.687
   isCooked: 0

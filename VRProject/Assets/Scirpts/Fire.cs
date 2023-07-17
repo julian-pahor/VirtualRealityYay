@@ -53,9 +53,10 @@ public class Fire : MonoBehaviour
     public float CookStrength(Vector3 position)
     {
         //distance from inner sphere
-        float distFromMin = Vector3.Distance(position,transform.position) - flameRadius;
+        Vector2 length = position - transform.position;
+        float distFromMin = Vector3.SqrMagnitude(length) - (flameRadius*flameRadius);
 
-        float totalDistance = cookRadius - flameRadius;
+        float totalDistance = (cookRadius*cookRadius) - (flameRadius*flameRadius);
 
         float percentage = distFromMin / totalDistance;
         if (distFromMin <= 0) percentage = 0;

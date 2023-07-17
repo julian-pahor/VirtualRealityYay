@@ -55,7 +55,9 @@ public class Saucer : MonoBehaviour
         {
             Vector3 direction = (saucerSpot.position - transform.position).normalized;
             transform.position += direction * Time.deltaTime * saucerSpeed;
-            if (Vector3.Distance(saucerSpot.position, transform.position) < 0.01f)
+            Vector3 length = saucerSpot.position - transform.position;
+
+            if (Vector3.SqrMagnitude(length) < Mathf.Pow(0.01f, 2))
             {
          
                 abduct = true;

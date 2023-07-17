@@ -34,7 +34,9 @@ public class SinisterFloatingOrb : MonoBehaviour
     {
         if (!mellow)
         {
-            if(Vector3.Distance(detector.ViewerPosition(),transform.position) < minDistance)
+            Vector3 length = detector.ViewerPosition() - transform.position;
+
+            if(Vector3.SqrMagnitude(length) < (minDistance*minDistance))
             {
                 mellow = true;
                 transform.localScale = new Vector3(.2f, .2f, .2f);

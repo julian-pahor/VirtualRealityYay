@@ -66,8 +66,9 @@ public class CreepyGuy : MonoBehaviour
 
                 if (player != null)
                 {
-                    float dist = Vector3.Distance(player.transform.position, transform.position);
-                    if (dist < stalkDistance)
+                    Vector3 length = player.transform.position - transform.position;
+                    float dist = Vector3.SqrMagnitude(length);
+                    if (dist < (stalkDistance*stalkDistance))
                     { 
                     Debug.Log("Creepy Guy: I'm waiting to spook you");
                     navMeshAgent.speed = 0;

@@ -6,6 +6,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Marshmallow : MonoBehaviour
 {
+    public Texture2D rawTexture1;
+    public Texture2D rawTexture2;
+
 
     public ParticleSystem burnEffect;
 
@@ -49,6 +52,13 @@ public class Marshmallow : MonoBehaviour
         rend = GetComponent<Renderer>();
         fire = FindObjectOfType<Fire>();
         source = GetComponent<AudioSource>();
+
+        SinisterFloatingOrb sfo;
+        if (!TryGetComponent<SinisterFloatingOrb>(out sfo))
+        {
+            int r = UnityEngine.Random.Range(0, 2);
+            rend.material.SetTexture("_RawTexture", r == 0 ? rawTexture1 : rawTexture2);
+        }
     }
     void Update()
     {

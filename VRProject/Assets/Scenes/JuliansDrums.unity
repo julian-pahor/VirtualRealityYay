@@ -505,6 +505,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b4f6cedf1b738439fc7df21ad3e8c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rawTexture1: {fileID: 0}
+  rawTexture2: {fileID: 0}
   burnEffect: {fileID: 811621058}
   cookThreshold: 0.95
   isCooked: 0
@@ -2158,7 +2160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1822784297580452263, guid: b48752eda1e2c474cb4b4d5632ad0eaa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.521
+      value: 3.485
       objectReference: {fileID: 0}
     - target: {fileID: 1822784297580452263, guid: b48752eda1e2c474cb4b4d5632ad0eaa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2166,7 +2168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1822784297580452263, guid: b48752eda1e2c474cb4b4d5632ad0eaa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.015
+      value: 3.913
       objectReference: {fileID: 0}
     - target: {fileID: 1822784297580452263, guid: b48752eda1e2c474cb4b4d5632ad0eaa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14661,7 +14663,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh64934
+  m_Name: pb_Mesh29598
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

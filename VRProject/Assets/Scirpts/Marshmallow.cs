@@ -137,6 +137,7 @@ public class Marshmallow : MonoBehaviour
             {
                 //Call any gameplay related feature
                 Grab();
+                if (source == null) return;
                 source.Pause();
                 source.clip = eatClip;
                 RandomiseAudio();
@@ -148,6 +149,7 @@ public class Marshmallow : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (source == null) return;
         source.Pause();
         source.loop = false;
         source.clip = impactClip;
